@@ -1,31 +1,26 @@
 package net.marco27.api.sling.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
-@JacksonXmlRootElement(localName = "jcr:root")
 public class SlingKeys {
 
-    @JacksonXmlProperty(localName = "jcr:primaryType")
-    @JsonIgnore
-    private String primaryType;
+    private String primaryType = "sling:MessageEntry";
+    private String key;
+    private String message;
 
-    @JacksonXmlProperty(localName = "jcr:mixinTypes")
-    @JsonIgnore
-    private String mixinTypes;
+    public SlingKeys(final String key, final String message) {
+        this.key = key;
+        this.message = message;
+    }
 
-    @JacksonXmlProperty(localName = "sling:basename")
-    @JsonIgnore
-    private String basename;
+    public String getPrimaryType() {
+        return primaryType;
+    }
 
-    @JacksonXmlProperty(localName = "jcr:language")
-    @JsonIgnore
-    private String language;
+    public String getKey() {
+        return key;
+    }
 
-    @JsonIgnore
-    private Object[] keys;
-
+    public String getMessage() {
+        return message;
+    }
 }

@@ -5,7 +5,7 @@ Apache Sling Keys Migration
 gradle clean build
 
 ### play
-java -cp build/libs/apacheslingkeysmigration-1.0-SNAPSHOT.jar net.marco27.api.sling.SlingKeyMigration /Users/marco27/dev/PFNEO/pf-neo/pf-neo-components/pf-neo-components-package/src/main/jcr_root/apps/pfch/components/i18n/en.xml /Users/marco27/dev/myStash/pf-neo/pf-neo-components/pf-neo-components-package/src/main/jcr_root/apps/pfch/website/i18n/en.xml
+java -cp build/libs/apacheslingkeysmigration-1.0-SNAPSHOT.jar net.marco27.api.sling.SlingKeyMigration /Users/marcoguastalli/temp/old.xml /Users/marcoguastalli/temp/new.xml
 
 ###### convert this
     <pfch.pages.homepage.description

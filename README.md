@@ -6,3 +6,4 @@ gradle clean build
 
 ### play
 java -cp build/libs/apacheslingkeysmigration-1.0-SNAPSHOT.jar net.marco27.api.sling.SlingKeyMigration /Users/marcoguastalli/temp/old.xml /Users/marcoguastalli/temp/new.xml
+java -cp build/libs/apacheslingkeysmigration-1.0-SNAPSHOT.jar net.marco27.api.sling.SlingKeyFromXmlToJson /Users/marcoguastalli/dev/PFNEO/pf-neo/pf-neo-components/pf-neo-components-package/src/main/jcr_root/apps/pfch/website/i18n/en.xml /Users/marcoguastalli/dev/PFNEO/pf-neo/pf-neo-components/pf-neo-components-package/src/main/jcr_root/apps/pfch/website/i18n/en.json

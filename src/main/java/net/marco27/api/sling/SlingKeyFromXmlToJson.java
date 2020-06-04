@@ -1,11 +1,13 @@
 package net.marco27.api.sling;
 
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
+import org.json.simple.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.Attributes;
@@ -43,6 +45,7 @@ public class SlingKeyFromXmlToJson {
 
         final List<SlingKeys> slingKeysList = parseSourceXml(sourceXmlPath);
         LOGGER.info("Found {} keys", slingKeysList.size());
+        writeJsonXml(targetJsonPath, slingKeysList);
     }
 
     private static List<SlingKeys> parseSourceXml(final String sourceXmlPath) {
@@ -76,4 +79,19 @@ public class SlingKeyFromXmlToJson {
         }
         return result;
     }
+
+    private static void writeJsonXml(final String targetJsonPath, final List<SlingKeys> slingKeysList) {
+        try {
+            JSONObject jsonObject = new JSONObject();
+            for (final SlingKeys slingKeys : slingKeysList) {
+                jsonObject.put(slingKeys.getKey(), slingKeys.getMessage());
+            }
+            FileWriter fileWriter = new FileWriter(targetJsonPath);
+            fileWriter.write(jsonObject.toJSONString());
+            fileWriter.close();
+        } catch (Exception e) {
+            LOGGER.error("Error!", e);
+        }
+    }
+
 }

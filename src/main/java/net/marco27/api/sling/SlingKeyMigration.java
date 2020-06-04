@@ -20,6 +20,22 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Convert this:
+ *
+ *     <pfch.pages.homepage.description
+ *             jcr:mixinTypes="[sling:Message]"
+ *             jcr:primaryType="nt:folder"
+ *             sling:message="Description Home Page"/>
+ *
+ * Into this:
+ *
+ *     <pfch.pages.homepage.description
+ *             jcr:primaryType="sling:MessageEntry"
+ *             sling:key="pfch.pages.homepage.description"
+ *             sling:message="Description Home Page"/>
+ *
+ */
 public class SlingKeyMigration {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(SlingKeyMigration.class);

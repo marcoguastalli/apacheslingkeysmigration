@@ -1,6 +1,5 @@
 package net.marco27.api.sling.domain;
 
-
 public class SlingKeys {
 
     private String primaryType = "sling:MessageEntry";

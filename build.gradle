@@ -1,5 +1,5 @@
-group 'marco27'
-version '1.0-SNAPSHOT'
+group 'net.marco27.api'
+version '1.0.0-SNAPSHOT'
 
 apply plugin: 'java'
 
@@ -10,12 +10,11 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
-    testCompile group: 'org.mockito', name: 'mockito-all', version: '1.10.19'
-    compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.26'
+    compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.30'
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.8.1'
     compile group: 'commons-io', name: 'commons-io', version: '2.6'
     compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter', version: '5.7.0'
 }
 
 jar {
